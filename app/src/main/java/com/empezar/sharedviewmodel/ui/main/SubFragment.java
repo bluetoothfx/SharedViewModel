@@ -40,7 +40,10 @@ public class SubFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        //here we are using requireActivity() instead of this
         mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+
         btnSend = view.findViewById(R.id.btnSend);
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override

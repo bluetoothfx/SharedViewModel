@@ -41,8 +41,9 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
+        //here we are using requireActivity() instead of this
+        mViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         mViewModel.data.observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
